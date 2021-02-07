@@ -19,11 +19,11 @@ sudo sed -i 's/xserverbpp=24/#xserverbpp=24\nxserverbpp=128/g' /etc/xrdp/xrdp.in
 echo xfce4-session > ~/.xsession
 
 sudo nano /etc/xrdp/startwm.sh
-comment these lines to:
+!comment these lines to:
 #test -x /etc/X11/Xsession && exec /etc/X11/Xsession
 #exec /bin/sh /etc/X11/Xsession
 
-add these lines:
+!add these lines:
 # xfce
 startxfce4
 
