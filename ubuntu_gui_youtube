@@ -8,7 +8,10 @@ wsl --set-default-version 2
 !Ubuntu GUI commands:
 sudo apt update && sudo apt -y upgrade
 sudo apt-get purge xrdp
+
+#Select gdm3 during install
 sudo apt install -y xrdp
+
 sudo apt install -y xfce4
 sudo apt install -y xfce4-goodies
 
