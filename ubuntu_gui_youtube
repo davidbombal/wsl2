@@ -18,6 +18,11 @@ sudo sed -i 's/max_bpp=32/#max_bpp=32\nmax_bpp=128/g' /etc/xrdp/xrdp.ini
 sudo sed -i 's/xserverbpp=24/#xserverbpp=24\nxserverbpp=128/g' /etc/xrdp/xrdp.ini
 echo xfce4-session > ~/.xsession
 
+!this will configure sesman to kill disconnected sessions after an hour to prevent reaching the MaxSessions
+sudo cp /etc/xrdp/sesman.ini /etc/xrdp/sesman.ini.bak
+sudo sed -i 's/KillDisconnected=false/KillDisconnected=true/g' /etc/xrdp/sesman.ini
+sudo sed -i 's/DisconnectedTimeLimit=0/DisconnectedTimeLimit=3600/g' /etc/xrdp/sesman.ini
+
 sudo nano /etc/xrdp/startwm.sh
 !comment these lines to:
 #test -x /etc/X11/Xsession && exec /etc/X11/Xsession
